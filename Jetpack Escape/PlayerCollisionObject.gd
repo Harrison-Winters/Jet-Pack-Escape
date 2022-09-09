@@ -25,7 +25,6 @@ func _ready():
 
 func _physics_process(delta):
 	if Input.is_action_pressed("ui_left"):
-		
 		var velocity = Vector2.LEFT * 400
 		move_and_collide(velocity * delta)
 #		position += velocity * delta
