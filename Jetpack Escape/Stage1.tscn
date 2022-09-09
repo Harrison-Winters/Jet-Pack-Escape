@@ -1,11 +1,39 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://icon.png" type="Texture" id=1]
-[ext_resource path="res://Player.gd" type="Script" id=2]
+[ext_resource path="res://PlayerCollisionObject.gd" type="Script" id=3]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 29, 29 )
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 178, 51 )
 
 [node name="Stage1" type="Node2D"]
 
-[node name="Player" type="Sprite" parent="."]
-position = Vector2( 474, 280 )
+[node name="PlayerCollisionObject" type="KinematicBody2D" parent="."]
+script = ExtResource( 3 )
+
+[node name="Player" type="Sprite" parent="PlayerCollisionObject"]
+position = Vector2( 528, 285 )
 texture = ExtResource( 1 )
-script = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerCollisionObject"]
+position = Vector2( 528, 284 )
+shape = SubResource( 2 )
+
+[node name="WallContainer" type="Node2D" parent="."]
+position = Vector2( 20, 39 )
+
+[node name="FallingWall1" type="StaticBody2D" parent="WallContainer"]
+position = Vector2( 249, 130 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WallContainer/FallingWall1"]
+shape = SubResource( 1 )
+
+[node name="ColorRect" type="ColorRect" parent="WallContainer/FallingWall1"]
+margin_left = -177.0
+margin_top = -53.0
+margin_right = 188.0
+margin_bottom = 52.0
+color = Color( 0.282353, 0.92549, 0.623529, 1 )
