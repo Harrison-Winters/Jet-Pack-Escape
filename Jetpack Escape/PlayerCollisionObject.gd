@@ -2,7 +2,6 @@ extends KinematicBody2D
 
 
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	screen_size = get_viewport_rect().size
 	
@@ -38,5 +37,5 @@ var screen_size = Vector2.ZERO
 
 func _process(delta):
 	position.x = clamp(position.x, 0, screen_size.x)
-	position.y = clamp(position.y, 0, screen_size.y)
+#	position.y = clamp(position.y, 0, screen_size.y)
 
