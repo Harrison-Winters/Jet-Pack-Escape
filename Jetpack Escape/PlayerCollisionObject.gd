@@ -4,7 +4,8 @@ extends KinematicBody2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	screen_size = get_viewport_rect().size
+	
 
 
 func _physics_process(delta):
@@ -29,4 +30,13 @@ func _physics_process(delta):
 		and not Input.is_action_pressed("ui_up")
 		and not Input.is_action_pressed("ui_down")):
 			move_and_collide(Vector2.ZERO)
-#		
+#
+var screen_size = Vector2.ZERO
+
+
+	
+
+func _process(delta):
+	position.x = clamp(position.x, 0, screen_size.x)
+	position.y = clamp(position.y, 0, screen_size.y)
+
