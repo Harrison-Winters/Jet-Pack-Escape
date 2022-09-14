@@ -38,4 +38,8 @@ var screen_size = Vector2.ZERO
 func _process(delta):
 	position.x = clamp(position.x, 0, screen_size.x)
 #	position.y = clamp(position.y, 0, screen_size.y)
+	
+	
+
+
 
