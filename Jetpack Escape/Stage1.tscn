@@ -5,6 +5,7 @@
 [ext_resource path="res://DeathZone.tscn" type="PackedScene" id=3]
 [ext_resource path="res://HUD.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Stage1.gd" type="Script" id=5]
+[ext_resource path="res://Obstacles.tscn" type="PackedScene" id=6]
 
 [sub_resource type="PhysicsMaterial" id=3]
 
@@ -13,9 +14,6 @@ extents = Vector2( 100.312, 49 )
 
 [sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 87.3072, 34 )
-
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 81, 31 )
 
 [node name="Stage1" type="Node2D"]
 script = ExtResource( 5 )
@@ -31,21 +29,21 @@ physics_material_override = SubResource( 3 )
 script = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WallContainer/FallingWall1"]
-position = Vector2( 18.3125, -3 )
+position = Vector2( -407, 117 )
 shape = SubResource( 5 )
 
 [node name="ColorRect" type="ColorRect" parent="WallContainer/FallingWall1"]
-margin_left = -94.0
-margin_top = -53.0
-margin_right = 125.0
-margin_bottom = 56.0
+margin_left = -574.0
+margin_top = 46.0
+margin_right = -355.0
+margin_bottom = 155.0
 color = Color( 0.443137, 0.470588, 0.458824, 1 )
 
 [node name="Outline" type="ColorRect" parent="WallContainer/FallingWall1"]
-margin_left = -77.0
-margin_top = -42.0
-margin_right = 109.0
-margin_bottom = 45.0
+margin_left = -551.0
+margin_top = 26.0
+margin_right = -365.0
+margin_bottom = 130.0
 color = Color( 0.211765, 0.188235, 0.188235, 1 )
 
 [node name="FallingWall2" type="StaticBody2D" parent="WallContainer"]
@@ -54,91 +52,22 @@ physics_material_override = SubResource( 3 )
 script = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WallContainer/FallingWall2"]
-position = Vector2( -2.5, 0 )
+position = Vector2( 468, 122 )
 scale = Vector2( 1.426, 1 )
 shape = SubResource( 4 )
 
 [node name="ColorRect" type="ColorRect" parent="WallContainer/FallingWall2"]
-margin_left = -125.0
-margin_top = -38.0
-margin_right = 121.0
-margin_bottom = 36.0
+margin_left = 332.0
+margin_top = 93.0
+margin_right = 578.0
+margin_bottom = 167.0
 color = Color( 0.443137, 0.470588, 0.458824, 1 )
 
 [node name="Outline" type="ColorRect" parent="WallContainer/FallingWall2"]
-margin_left = -117.0
-margin_top = -29.0
-margin_right = 112.0
-margin_bottom = 23.0
-color = Color( 0.211765, 0.188235, 0.188235, 1 )
-
-[node name="FallingWall3" type="StaticBody2D" parent="WallContainer"]
-position = Vector2( 406, 259 )
-physics_material_override = SubResource( 3 )
-script = ExtResource( 2 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="WallContainer/FallingWall3"]
-position = Vector2( 1.9375, 3 )
-shape = SubResource( 1 )
-
-[node name="ColorRect" type="ColorRect" parent="WallContainer/FallingWall3"]
-margin_left = -86.0
-margin_top = -28.0
-margin_right = 84.0
-margin_bottom = 40.0
-color = Color( 0.443137, 0.470588, 0.458824, 1 )
-
-[node name="Outline" type="ColorRect" parent="WallContainer/FallingWall3"]
-margin_left = -65.0
-margin_top = -12.0
-margin_right = 59.0
-margin_bottom = 28.0
-color = Color( 0.211765, 0.188235, 0.188235, 1 )
-
-[node name="FallingWall4" type="StaticBody2D" parent="WallContainer"]
-position = Vector2( 96, 399 )
-physics_material_override = SubResource( 3 )
-script = ExtResource( 2 )
-
-[node name="Collision" type="CollisionShape2D" parent="WallContainer/FallingWall4"]
-position = Vector2( -7.125, 3.75 )
-shape = SubResource( 1 )
-
-[node name="ColorRect" type="ColorRect" parent="WallContainer/FallingWall4"]
-margin_left = -80.0
-margin_top = -28.0
-margin_right = 75.0
-margin_bottom = 40.0
-color = Color( 0.443137, 0.470588, 0.458824, 1 )
-
-[node name="Outline" type="ColorRect" parent="WallContainer/FallingWall4"]
-margin_left = -65.0
-margin_top = -23.0
-margin_right = 63.0
-margin_bottom = 35.0
-color = Color( 0.211765, 0.188235, 0.188235, 1 )
-
-[node name="FallingWall5" type="StaticBody2D" parent="WallContainer"]
-position = Vector2( 250, -131 )
-physics_material_override = SubResource( 3 )
-script = ExtResource( 2 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="WallContainer/FallingWall5"]
-position = Vector2( 8, 7 )
-shape = SubResource( 1 )
-
-[node name="ColorRect" type="ColorRect" parent="WallContainer/FallingWall5"]
-margin_left = -67.0
-margin_top = -26.0
-margin_right = 93.0
-margin_bottom = 42.0
-color = Color( 0.443137, 0.470588, 0.458824, 1 )
-
-[node name="Outline" type="ColorRect" parent="WallContainer/FallingWall5"]
-margin_left = -63.0
-margin_top = -21.0
-margin_right = 82.0
-margin_bottom = 36.0
+margin_left = 399.0
+margin_top = 133.0
+margin_right = 628.0
+margin_bottom = 185.0
 color = Color( 0.211765, 0.188235, 0.188235, 1 )
 
 [node name="BackgroundLayer" type="CanvasLayer" parent="."]
@@ -148,6 +77,10 @@ layer = -1
 light_mask = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_left = 6.0
+margin_top = 1.0
+margin_right = 6.0
+margin_bottom = 1.0
 color = Color( 0.239216, 0.596078, 0.619608, 1 )
 
 [node name="DeathZone" parent="." instance=ExtResource( 3 )]
@@ -155,3 +88,32 @@ position = Vector2( -649, 482 )
 collision_layer = 0
 
 [node name="HUD" parent="." instance=ExtResource( 4 )]
+
+[node name="Obstacles" parent="." instance=ExtResource( 6 )]
+position = Vector2( 21, 274 )
+
+[node name="Obstacles2" parent="." instance=ExtResource( 6 )]
+position = Vector2( 11, -720 )
+
+[node name="Obstacles3" parent="." instance=ExtResource( 6 )]
+position = Vector2( 123, -196 )
+rotation = 0.546288
+z_index = 40
+
+[node name="Obstacles4" parent="." instance=ExtResource( 6 )]
+position = Vector2( -143, -275 )
+
+[node name="Obstacles5" parent="." instance=ExtResource( 6 )]
+position = Vector2( -310, -279 )
+rotation = -0.546288
+
+[node name="Obstacles6" parent="." instance=ExtResource( 6 )]
+position = Vector2( 488, -761 )
+rotation = 1.5708
+
+[node name="Obstacles7" parent="." instance=ExtResource( 6 )]
+position = Vector2( -278, 112 )
+
+[node name="Obstacles8" parent="." instance=ExtResource( 6 )]
+position = Vector2( 538, -616 )
+rotation = -3.14159
