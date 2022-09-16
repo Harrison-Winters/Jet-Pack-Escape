@@ -1,12 +1,9 @@
 extends KinematicBody2D
-
-
+var can_shoot = true
 
 func _ready():
 	screen_size = get_viewport_rect().size
 	
-
-
 func _physics_process(delta):
 	if Input.is_action_pressed("ui_left"):
 		var velocity = Vector2.LEFT * 400
@@ -32,14 +29,15 @@ func _physics_process(delta):
 #
 var screen_size = Vector2.ZERO
 
-
-	
-
 func _process(delta):
+	if (Input.is_action_pressed("shoot") and can_shoot == true):
+		var resource = load("res://player_bullet.tscn")
+		var bullet = resource.instance()
+		add_child(bullet)
+		can_shoot = false
+		$PlayerShotTimer.start()
 	position.x = clamp(position.x, 0, screen_size.x)
 #	position.y = clamp(position.y, 0, screen_size.y)
 	
-	
-
-
-
+func _on_PlayerShotTimer_timeout():
+	can_shoot = true

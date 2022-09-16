@@ -14,7 +14,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	var velocity = Vector2.DOWN.rotated(angle) * speed
+	var velocity = Vector2.UP.rotated(angle) * speed
 	position += velocity * delta
 	
 #destroys bullet once it exits the screen
