@@ -1,9 +1,13 @@
 extends KinematicBody2D
 
+onready var invincibilityTimer := $InvincibilityTimer
+onready var shieldSpirite := $Shield
 
+export var damageInvincibilityTimer := 2.0
 
 func _ready():
 	screen_size = get_viewport_rect().size
+	shieldSpirite.visible = false
 	
 
 
@@ -29,9 +33,19 @@ func _physics_process(delta):
 		and not Input.is_action_pressed("ui_up")
 		and not Input.is_action_pressed("ui_down")):
 			move_and_collide(Vector2.ZERO)
+	
+	if Input.is_action_pressed("ui_parry"):
+		invincibilityTimer.start(damageInvincibilityTimer)
+		shieldSpirite.visible = true
 #
 var screen_size = Vector2.ZERO
 
+func damage(amount: int):
+	
+	if !invincibilityTimer.is_stopped():
+		return
+	
+	
 
 	
 
@@ -42,4 +56,5 @@ func _process(delta):
 	
 
 
-
+func _on_InvincibilityTimer_timeout():
+	shieldSpirite.visible = false
