@@ -28,4 +28,7 @@ position = Vector2( -3, -1 )
 scale = Vector2( 0.75, 0.75 )
 texture = ExtResource( 3 )
 
+[node name="ShieldDelayTimer" type="Timer" parent="."]
+one_shot = true
+
 [connection signal="timeout" from="InvincibilityTimer" to="." method="_on_InvincibilityTimer_timeout"]

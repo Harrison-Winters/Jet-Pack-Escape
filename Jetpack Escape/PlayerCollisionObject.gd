@@ -2,8 +2,10 @@ extends KinematicBody2D
 
 onready var invincibilityTimer := $InvincibilityTimer
 onready var shieldSpirite := $Shield
+onready var shieldDelayTimer := $ShieldDelayTimer
 
 export var damageInvincibilityTimer := 2.0
+export var shieldDelay: float = 3.0
 
 func _ready():
 	screen_size = get_viewport_rect().size
@@ -34,7 +36,8 @@ func _physics_process(delta):
 		and not Input.is_action_pressed("ui_down")):
 			move_and_collide(Vector2.ZERO)
 	
-	if Input.is_action_pressed("ui_parry"):
+	if Input.is_action_pressed("ui_parry") and shieldDelayTimer.is_stopped():
+		shieldDelayTimer.start(shieldDelay)
 		invincibilityTimer.start(damageInvincibilityTimer)
 		shieldSpirite.visible = true
 #
@@ -44,9 +47,6 @@ func damage(amount: int):
 	
 	if !invincibilityTimer.is_stopped():
 		return
-	
-	
-
 	
 
 func _process(delta):
