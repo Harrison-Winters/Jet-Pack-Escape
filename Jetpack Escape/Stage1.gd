@@ -1,19 +1,35 @@
 extends Node2D
 
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
-
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	pass
+#	$HUD/StartButton.show()\
+	var y = yield($HUD, "start_game")
+	get_tree().call_group("ObstacleGroup", "update_velocity")
+
+	
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+
 func _process(delta):
+	
+#	GAME OVER Condition
 	if $PlayerCollisionObject.position.y > 800:
+		$PlayerCollisionObject.visible = false
+		$PlayerCollisionObject.position.x = 254
+		$PlayerCollisionObject.position.y = 638
 		$HUD.show_game_over()
+#		$StartTimer.start()
+#		Clear all obstacles from the screen
+		get_tree().call_group("ObstacleGroup", "queue_free")
+
+func new_game():
+	get_tree().reload_current_scene()
+	
+#	$HUD/StartButton.show()
+	var y = yield($HUD, "start_game")
+	get_tree().call_group("ObstacleGroup", "update_velocity")
+
+
+#func initial_game():
+#	var y = yield($HUD, "start_game")
+#	get_tree().call_group("ObstacleGroup", "update_velocity")
