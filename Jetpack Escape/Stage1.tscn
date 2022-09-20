@@ -5,7 +5,7 @@
 [ext_resource path="res://DeathZone.tscn" type="PackedScene" id=3]
 [ext_resource path="res://HUD.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Stage1.gd" type="Script" id=5]
-[ext_resource path="res://Obstacles.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Part1.tscn" type="PackedScene" id=6]
 
 [sub_resource type="PhysicsMaterial" id=3]
 
@@ -19,6 +19,7 @@ extents = Vector2( 87.3072, 34 )
 script = ExtResource( 5 )
 
 [node name="PlayerCollisionObject" parent="." instance=ExtResource( 1 )]
+position = Vector2( 245, 636 )
 
 [node name="WallContainer" type="Node2D" parent="."]
 position = Vector2( -11, -3 )
@@ -77,9 +78,9 @@ layer = -1
 light_mask = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 6.0
+margin_left = -1.0
 margin_top = 1.0
-margin_right = 6.0
+margin_right = -1.0
 margin_bottom = 1.0
 color = Color( 0.239216, 0.596078, 0.619608, 1 )
 
@@ -89,31 +90,5 @@ collision_layer = 0
 
 [node name="HUD" parent="." instance=ExtResource( 4 )]
 
-[node name="Obstacles" parent="." instance=ExtResource( 6 )]
-position = Vector2( 21, 274 )
-
-[node name="Obstacles2" parent="." instance=ExtResource( 6 )]
-position = Vector2( 11, -720 )
-
-[node name="Obstacles3" parent="." instance=ExtResource( 6 )]
-position = Vector2( 123, -196 )
-rotation = 0.546288
-z_index = 40
-
-[node name="Obstacles4" parent="." instance=ExtResource( 6 )]
-position = Vector2( -143, -275 )
-
-[node name="Obstacles5" parent="." instance=ExtResource( 6 )]
-position = Vector2( -310, -279 )
-rotation = -0.546288
-
-[node name="Obstacles6" parent="." instance=ExtResource( 6 )]
-position = Vector2( 488, -761 )
-rotation = 1.5708
-
-[node name="Obstacles7" parent="." instance=ExtResource( 6 )]
-position = Vector2( -278, 112 )
-
-[node name="Obstacles8" parent="." instance=ExtResource( 6 )]
-position = Vector2( 538, -616 )
-rotation = -3.14159
+[node name="Part1" parent="." instance=ExtResource( 6 )]
+position = Vector2( -310, -121 )
