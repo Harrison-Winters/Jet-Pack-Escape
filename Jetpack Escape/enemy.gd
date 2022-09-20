@@ -17,4 +17,4 @@ func _process(delta):
 func _on_ShotTimer_timeout():
 	var resource = load("res://enemy_bullet.tscn")
 	var bullet = resource.instance()
-	add_child(bullet)
+	owner.add_child(bullet)

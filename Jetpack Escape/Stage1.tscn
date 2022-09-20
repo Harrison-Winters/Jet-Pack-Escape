@@ -74,9 +74,10 @@ color = Color( 0.211765, 0.188235, 0.188235, 1 )
 layer = -1
 
 [node name="Background" type="ColorRect" parent="BackgroundLayer"]
-light_mask = 0
+
 anchor_right = 1.0
 anchor_bottom = 1.0
+
 color = Color( 0.239216, 0.596078, 0.619608, 1 )
 
 [node name="DeathZone" parent="." instance=ExtResource( 3 )]
