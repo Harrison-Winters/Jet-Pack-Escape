@@ -28,7 +28,6 @@ texture = ExtResource( 3 )
 [node name="ShieldDelayTimer" type="Timer" parent="."]
 one_shot = true
 
-[connection signal="timeout" from="InvincibilityTimer" to="." method="_on_InvincibilityTimer_timeout"]
 [node name="PlayerShotTimer" type="Timer" parent="."]
 wait_time = 0.1
 one_shot = true
@@ -36,4 +35,5 @@ one_shot = true
 [node name="PlayerShootPosition" type="Position2D" parent="."]
 position = Vector2( 0, -32 )
 
+[connection signal="timeout" from="InvincibilityTimer" to="." method="_on_InvincibilityTimer_timeout"]
 [connection signal="timeout" from="PlayerShotTimer" to="." method="_on_PlayerShotTimer_timeout"]
