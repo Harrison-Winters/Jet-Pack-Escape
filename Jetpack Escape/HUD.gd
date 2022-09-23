@@ -30,3 +30,7 @@ func _on_StartButton_pressed():
 	$LifeCounter.show()
 	emit_signal("start_game")
 	
+
+
+func _on_Part1_win():
+	
