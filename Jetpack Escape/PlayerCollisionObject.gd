@@ -53,8 +53,9 @@ func damage(amount: int):
 	
 
 func _process(delta):
+	#shooting logic
 	if (Input.is_action_pressed("shoot") and can_shoot == true):
-		var resource = load("res://player_bullet.tscn")
+		var resource = load("res://bullet.tscn")
 		var bullet = resource.instance()
 		owner.add_child(bullet)
 		bullet.transform = $PlayerShootPosition.global_transform
@@ -62,6 +63,7 @@ func _process(delta):
 		$PlayerShotTimer.start()
 	position.x = clamp(position.x, 0, screen_size.x)
 	position.y = clamp(position.y, 0, screen_size.y + 100)
+
 	
 	
 
