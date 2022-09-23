@@ -49,6 +49,7 @@ custom_fonts/font = SubResource( 2 )
 text = "START"
 
 [node name="RestartPauseTimer" type="Timer" parent="."]
+wait_time = 1.5
 one_shot = true
 
 [node name="LifeCounter" type="Label" parent="."]
@@ -72,6 +73,7 @@ text = "Score: "
 align = 1
 
 [node name="WinText" type="Label" parent="."]
+visible = false
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
