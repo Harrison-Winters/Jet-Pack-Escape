@@ -1,6 +1,8 @@
 extends KinematicBody2D
 class_name Player
 
+var screen_size = Vector2.ZERO
+
 onready var invincibilityTimer := $InvincibilityTimer
 onready var shieldSpirite := $Shield
 onready var shieldDelayTimer := $ShieldDelayTimer
@@ -11,6 +13,7 @@ export var life: int = 3
 
 var can_shoot = true
 
+
 func _ready():
 	screen_size = get_viewport_rect().size
 	shieldSpirite.visible = false
@@ -19,7 +22,7 @@ func _physics_process(delta):
 	if Input.is_action_pressed("ui_left"):
 		var velocity = Vector2.LEFT * 400
 		move_and_collide(velocity * delta)
-#		position += velocity * delta
+#	
 	if Input.is_action_pressed("ui_right"):
 		var velocity = Vector2.RIGHT * 400
 		move_and_collide(velocity * delta)
@@ -43,7 +46,7 @@ func _physics_process(delta):
 		invincibilityTimer.start(damageInvincibilityTimer)
 		shieldSpirite.visible = true
 #
-var screen_size = Vector2.ZERO
+
 
 func damage(amount: int):
 	
@@ -58,15 +61,17 @@ func damage(amount: int):
 	
 
 func _process(delta):
+	#shooting logic
 	if (Input.is_action_pressed("shoot") and can_shoot == true):
-		var resource = load("res://player_bullet.tscn")
+		var resource = load("res://bullet.tscn")
 		var bullet = resource.instance()
 		owner.add_child(bullet)
 		bullet.transform = $PlayerShootPosition.global_transform
 		can_shoot = false
 		$PlayerShotTimer.start()
 	position.x = clamp(position.x, 0, screen_size.x)
-#	position.y = clamp(position.y, 0, screen_size.y)
+	position.y = clamp(position.y, 0, screen_size.y + 100)
+
 	
 
 func _on_InvincibilityTimer_timeout():
