@@ -12,6 +12,5 @@ func get_player_position():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
 	get_player_position()
-	if aimPosition != null:
-		look_at(aimPosition)
+	look_at(aimPosition)
 	pass
