@@ -43,7 +43,10 @@ func _physics_process(delta):
 		shieldDelayTimer.start(shieldDelay)
 		invincibilityTimer.start(damageInvincibilityTimer)
 		shieldSpirite.visible = true
-#
+	
+	
+	
+
 
 
 func damage(amount: int):
