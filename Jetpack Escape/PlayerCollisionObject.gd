@@ -61,7 +61,7 @@ func _process(delta):
 		can_shoot = false
 		$PlayerShotTimer.start()
 	position.x = clamp(position.x, 0, screen_size.x)
-#	position.y = clamp(position.y, 0, screen_size.y)
+	position.y = clamp(position.y, 0, screen_size.y + 100)
 	
 	
 
