@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://PlayerCollisionObject.gd" type="Script" id=1]
 [ext_resource path="res://icon.png" type="Texture" id=2]
+[ext_resource path="res://Shield.png" type="Texture" id=3]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 21.0
@@ -16,6 +17,17 @@ shape = SubResource( 1 )
 [node name="Player" type="Sprite" parent="."]
 texture = ExtResource( 2 )
 
+[node name="InvincibilityTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="Shield" type="Sprite" parent="."]
+position = Vector2( -3, -1 )
+scale = Vector2( 0.75, 0.75 )
+texture = ExtResource( 3 )
+
+[node name="ShieldDelayTimer" type="Timer" parent="."]
+one_shot = true
+
 [node name="PlayerShotTimer" type="Timer" parent="."]
 wait_time = 0.1
 one_shot = true
@@ -23,4 +35,5 @@ one_shot = true
 [node name="PlayerShootPosition" type="Position2D" parent="."]
 position = Vector2( 0, -32 )
 
+[connection signal="timeout" from="InvincibilityTimer" to="." method="_on_InvincibilityTimer_timeout"]
 [connection signal="timeout" from="PlayerShotTimer" to="." method="_on_PlayerShotTimer_timeout"]

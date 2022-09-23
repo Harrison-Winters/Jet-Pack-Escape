@@ -2,11 +2,16 @@
 
 importer="texture"
 type="StreamTexture"
-valid=false
+path="res://.import/Shield.png-2ff0e0fb9d0c91c4f1dd7bb28f4de35b.stex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
-source_file="res://art/__MACOSX/._retro-texture-pack.png"
+source_file="res://Shield.png"
+dest_files=[ "res://.import/Shield.png-2ff0e0fb9d0c91c4f1dd7bb28f4de35b.stex" ]
+
 [params]
 
 compress/mode=0
