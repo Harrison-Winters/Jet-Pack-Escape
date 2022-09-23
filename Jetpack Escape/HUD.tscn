@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Fonts/xolonium-regular.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://HUD.gd" type="Script" id=2]
@@ -8,6 +8,14 @@ size = 44
 font_data = ExtResource( 1 )
 
 [sub_resource type="DynamicFont" id=2]
+size = 30
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 33
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=4]
 size = 30
 font_data = ExtResource( 1 )
 
@@ -42,5 +50,25 @@ text = "START"
 
 [node name="RestartPauseTimer" type="Timer" parent="."]
 one_shot = true
+
+[node name="LifeCounter" type="Label" parent="."]
+visible = false
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = -40.0
+margin_right = 43.0
+custom_fonts/font = SubResource( 3 )
+text = "Lives: "
+
+[node name="ScoreCounter" type="Label" parent="."]
+visible = false
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -65.0
+margin_right = 65.0
+margin_bottom = 37.0
+custom_fonts/font = SubResource( 4 )
+text = "Score: "
+align = 1
 
 [connection signal="pressed" from="StartButton" to="." method="_on_StartButton_pressed"]
