@@ -11,7 +11,7 @@ func _process(delta):
 	position += velocity * delta
 	
 	if position.y > 800:
-		position.y = -500
+		position.y = -800
 	
 func update_velocity():
 	velocity = Vector2.DOWN * 200

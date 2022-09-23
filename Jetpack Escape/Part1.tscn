@@ -1,0 +1,74 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Wall1.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Wall2.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Wall3.tscn" type="PackedScene" id=3]
+
+[node name="Part1" type="Node2D"]
+position = Vector2( -300, -51 )
+
+[node name="Obstacle1" parent="." instance=ExtResource( 1 )]
+position = Vector2( 284, 325 )
+
+[node name="Obstacle2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 391, 31 )
+
+[node name="Obstacle3" parent="." instance=ExtResource( 1 )]
+position = Vector2( 646, 441 )
+
+[node name="Obstacle4" parent="." instance=ExtResource( 1 )]
+position = Vector2( 517, -625 )
+
+[node name="Obstacle5" parent="." instance=ExtResource( 2 )]
+position = Vector2( 612, -170 )
+
+[node name="Obstacle6" parent="." instance=ExtResource( 1 )]
+position = Vector2( 285, -187 )
+
+[node name="Obstacle7" parent="." instance=ExtResource( 2 )]
+position = Vector2( 684, -462 )
+
+[node name="Obstacles" parent="." instance=ExtResource( 1 )]
+position = Vector2( 488, -328 )
+
+[node name="Wall3" parent="." instance=ExtResource( 3 )]
+position = Vector2( 784, 205 )
+rotation = 3.14159
+
+[node name="Wall4" parent="." instance=ExtResource( 3 )]
+position = Vector2( 285, -489 )
+
+[node name="Obstacles2" parent="." instance=ExtResource( 1 )]
+position = Vector2( 289, -869 )
+
+[node name="Obstacles3" parent="." instance=ExtResource( 1 )]
+position = Vector2( 682, -868 )
+
+[node name="Obstacle8" parent="." instance=ExtResource( 2 )]
+position = Vector2( 577, -1566 )
+
+[node name="Wall5" parent="." instance=ExtResource( 3 )]
+position = Vector2( 584, -1124 )
+rotation = 1.5708
+
+[node name="Wall6" parent="Wall5" instance=ExtResource( 3 )]
+position = Vector2( 64, 66 )
+rotation = 3.14159
+
+[node name="Obstacles4" parent="." instance=ExtResource( 1 )]
+position = Vector2( 282, -1394 )
+
+[node name="Obstacles5" parent="." instance=ExtResource( 1 )]
+position = Vector2( 719, -1724 )
+
+[node name="Obstacles6" parent="." instance=ExtResource( 1 )]
+position = Vector2( 534, -1896 )
+
+[node name="Obstacles7" parent="." instance=ExtResource( 1 )]
+position = Vector2( 281, -2051 )
+
+[node name="Obstacles8" parent="." instance=ExtResource( 1 )]
+position = Vector2( 612, -2251 )
+
+[node name="Obstacle9" parent="." instance=ExtResource( 2 )]
+position = Vector2( 291, -1787 )

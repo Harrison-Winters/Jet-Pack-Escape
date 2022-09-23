@@ -1,25 +1,25 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://FallingWall1.gd" type="Script" id=2]
 [ext_resource path="res://DeathZone.tscn" type="PackedScene" id=3]
 [ext_resource path="res://HUD.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Stage1.gd" type="Script" id=5]
-[ext_resource path="res://Obstacles.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Part1.tscn" type="PackedScene" id=6]
 
 [sub_resource type="PhysicsMaterial" id=3]
 
 [sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 100.312, 49 )
 
-[sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 87.3072, 34 )
-
 [node name="Stage1" type="Node2D"]
 script = ExtResource( 5 )
 
 [node name="PlayerCollisionObject" parent="." instance=ExtResource( 1 )]
-position = Vector2( 240, 600 )
+
+position = Vector2( 245, 636 )
+
+
 
 [node name="WallContainer" type="Node2D" parent="."]
 position = Vector2( -11, -3 )
@@ -47,36 +47,18 @@ margin_right = -365.0
 margin_bottom = 130.0
 color = Color( 0.211765, 0.188235, 0.188235, 1 )
 
-[node name="FallingWall2" type="StaticBody2D" parent="WallContainer"]
-position = Vector2( 366, -414 )
-physics_material_override = SubResource( 3 )
-script = ExtResource( 2 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="WallContainer/FallingWall2"]
-position = Vector2( 468, 122 )
-scale = Vector2( 1.426, 1 )
-shape = SubResource( 4 )
-
-[node name="ColorRect" type="ColorRect" parent="WallContainer/FallingWall2"]
-margin_left = 332.0
-margin_top = 93.0
-margin_right = 578.0
-margin_bottom = 167.0
-color = Color( 0.443137, 0.470588, 0.458824, 1 )
-
-[node name="Outline" type="ColorRect" parent="WallContainer/FallingWall2"]
-margin_left = 399.0
-margin_top = 133.0
-margin_right = 628.0
-margin_bottom = 185.0
-color = Color( 0.211765, 0.188235, 0.188235, 1 )
-
 [node name="BackgroundLayer" type="CanvasLayer" parent="."]
 layer = -1
 
 [node name="Background" type="ColorRect" parent="BackgroundLayer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+
+margin_left = -1.0
+margin_top = 1.0
+margin_right = -1.0
+margin_bottom = 1.0
+
 color = Color( 0.239216, 0.596078, 0.619608, 1 )
 
 [node name="DeathZone" parent="." instance=ExtResource( 3 )]
@@ -84,6 +66,10 @@ position = Vector2( -649, 482 )
 collision_layer = 0
 
 [node name="HUD" parent="." instance=ExtResource( 4 )]
+
+
+[node name="Part1" parent="." instance=ExtResource( 6 )]
+position = Vector2( -292, -78 )
 
 [node name="Obstacles" parent="." groups=["ObstacleGroup"] instance=ExtResource( 6 )]
 position = Vector2( 6, 274 )
@@ -119,3 +105,4 @@ one_shot = true
 
 [connection signal="restart_game" from="HUD" to="." method="new_game"]
 [connection signal="start_game" from="HUD" to="." method="initial_game"]
+
