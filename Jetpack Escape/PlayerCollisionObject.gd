@@ -1,4 +1,5 @@
 extends KinematicBody2D
+class_name Player
 
 var screen_size = Vector2.ZERO
 
@@ -7,8 +8,9 @@ onready var shieldSpirite := $Shield
 onready var shieldDelayTimer := $ShieldDelayTimer
 
 export var damageInvincibilityTimer := 2.0
-
 export var shieldDelay: float = 3.0
+export var life: int = 3
+
 var can_shoot = true
 
 
@@ -51,6 +53,12 @@ func damage(amount: int):
 	if !invincibilityTimer.is_stopped():
 		return
 	
+	life -= amount
+	print("Player Life = %s" % life)
+	if life <= 0:
+		print("Player Died")
+		queue_free()
+	
 
 func _process(delta):
 	#shooting logic
@@ -65,8 +73,6 @@ func _process(delta):
 	position.y = clamp(position.y, 0, screen_size.y + 100)
 
 	
-	
-
 
 func _on_InvincibilityTimer_timeout():
 	shieldSpirite.visible = false
