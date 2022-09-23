@@ -4,16 +4,16 @@
 [ext_resource path="res://Wall2.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Wall3.tscn" type="PackedScene" id=3]
 [ext_resource path="res://WinArea.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Obstacles.gd" type="Script" id=5]
+[ext_resource path="res://Part1.gd" type="Script" id=5]
 
 [node name="Part1" type="Node2D"]
 position = Vector2( -300, -51 )
+script = ExtResource( 5 )
 
 [node name="WinArea" parent="." groups=["ObstaclesPart1"] instance=ExtResource( 4 )]
 position = Vector2( 370, -2469 )
-collision_layer = 1024
-collision_mask = 1024
-script = ExtResource( 5 )
+collision_layer = 1025
+collision_mask = 1025
 
 [node name="Obstacle1" parent="." groups=["ObstaclesPart1"] instance=ExtResource( 1 )]
 position = Vector2( 284, 325 )
@@ -80,3 +80,5 @@ position = Vector2( 612, -2251 )
 
 [node name="Obstacle9" parent="." groups=["ObstaclesPart1"] instance=ExtResource( 2 )]
 position = Vector2( 291, -1787 )
+
+[connection signal="win" from="WinArea" to="." method="_on_WinArea_win"]
