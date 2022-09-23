@@ -33,4 +33,4 @@ func _on_StartButton_pressed():
 
 
 func _on_Part1_win():
-	
+	$WinText.show()
