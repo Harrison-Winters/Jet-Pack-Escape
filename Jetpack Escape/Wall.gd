@@ -1,18 +1,14 @@
 extends Node2D
 
-var velocity = Vector2.ZERO
 
 
 func _ready():
-	pass
+	pass # Replace with function body.
 	
 func _process(delta):
-#	var velocity = Vector2.DOWN * 200
-	position += velocity * delta
+	var velocity = Vector2.DOWN * 200
+	position += velocity * delta	
 	
-#	if position.y > 800:
-#		position.y = -800
-	
-func update_velocity():
-	velocity = Vector2.DOWN * 200
+	if position.y > 800:
+		position.y = -800
 	
