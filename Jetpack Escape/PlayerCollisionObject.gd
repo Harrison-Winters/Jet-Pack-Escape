@@ -1,12 +1,14 @@
 extends KinematicBody2D
+class_name Player
 
 onready var invincibilityTimer := $InvincibilityTimer
 onready var shieldSpirite := $Shield
 onready var shieldDelayTimer := $ShieldDelayTimer
 
 export var damageInvincibilityTimer := 2.0
-
 export var shieldDelay: float = 3.0
+export var life: int = 3
+
 var can_shoot = true
 
 func _ready():
@@ -48,6 +50,12 @@ func damage(amount: int):
 	if !invincibilityTimer.is_stopped():
 		return
 	
+	life -= amount
+	print("Player Life = %s" % life)
+	if life <= 0:
+		print("Player Died")
+		queue_free()
+	
 
 func _process(delta):
 	if (Input.is_action_pressed("shoot") and can_shoot == true):
@@ -60,8 +68,6 @@ func _process(delta):
 	position.x = clamp(position.x, 0, screen_size.x)
 #	position.y = clamp(position.y, 0, screen_size.y)
 	
-	
-
 
 func _on_InvincibilityTimer_timeout():
 	shieldSpirite.visible = false

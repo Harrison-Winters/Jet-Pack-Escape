@@ -21,3 +21,7 @@ func _process(delta):
 #destroys bullet once it exits the screen
 func _on_VisibilityNotifier2D_screen_exited():
 	queue_free()
+
+func _on_EnemyBullet_body_entered(body):
+	if body is Player:
+		body.damage(1)

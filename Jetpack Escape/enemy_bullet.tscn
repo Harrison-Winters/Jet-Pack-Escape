@@ -18,3 +18,5 @@ color = Color( 0.898039, 0.447059, 0.447059, 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
+
+[connection signal="body_entered" from="." to="." method="_on_EnemyBullet_body_entered"]
