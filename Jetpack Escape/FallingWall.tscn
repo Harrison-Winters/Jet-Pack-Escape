@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://art/png/TILE_1B.png" type="Texture" id=1]
+[ext_resource path="res://Wall.gd" type="Script" id=2]
+
+[node name="FallingWall" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2( 33, 33 )
+polygon = PoolVector2Array( 32, 32, -32, 32, -32, -32, 32, -32 )
+
+[node name="Tile1b" type="Sprite" parent="StaticBody2D"]
+position = Vector2( 33, 33 )
+texture = ExtResource( 1 )
