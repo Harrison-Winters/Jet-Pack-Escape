@@ -69,6 +69,3 @@ script = ExtResource( 7 )
 
 [node name="StartTimer" type="Timer" parent="."]
 one_shot = true
-
-[connection signal="restart_game" from="HUD" to="." method="new_game"]
-[connection signal="start_game" from="HUD" to="." method="initial_game"]
