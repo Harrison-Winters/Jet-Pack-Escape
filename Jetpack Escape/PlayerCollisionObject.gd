@@ -30,6 +30,7 @@ func _physics_process(delta):
 var screen_size = Vector2.ZERO
 
 func _process(delta):
+	#shooting logic
 	if (Input.is_action_pressed("shoot") and can_shoot == true):
 		var resource = load("res://bullet.tscn")
 		var bullet = resource.instance()
@@ -38,6 +39,7 @@ func _process(delta):
 		can_shoot = false
 		$PlayerShotTimer.start()
 	position.x = clamp(position.x, 0, screen_size.x)
+
 #	position.y = clamp(position.y, 0, screen_size.y)
 	
 func _on_PlayerShotTimer_timeout():
