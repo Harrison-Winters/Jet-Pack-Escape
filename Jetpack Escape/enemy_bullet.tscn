@@ -7,4 +7,4 @@
 script = ExtResource( 2 )
 
 [node name="ColorRect" parent="." index="0"]
-color = Color( 0.898039, 0.447059, 0.447059, 1 )
+color = Color( 0.839216, 0.286275, 0.286275, 1 )
