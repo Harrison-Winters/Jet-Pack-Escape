@@ -29,6 +29,6 @@ shape = SubResource( 2 )
 autostart = true
 
 [node name="EnemyShootPosition" type="Position2D" parent="."]
-position = Vector2( 0, 13 )
+position = Vector2( 0, 21 )
 
 [connection signal="timeout" from="ShotTimer" to="." method="_on_ShotTimer_timeout"]

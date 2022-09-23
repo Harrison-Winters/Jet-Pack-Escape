@@ -4,14 +4,15 @@ extends "res://bullet.gd"
 # Declare member variables here. Examples:
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	angle = global_rotation
+	#angle = global_rotation
+	angle = PI
 	speed = 350.0
 	#pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
-	var velocity = Vector2.DOWN.rotated(angle) * speed
+	var velocity = Vector2.UP.rotated(angle) * speed
 	#var velocity  = global_transform.x * speed
 	position += velocity * delta
 	
