@@ -31,7 +31,7 @@ var screen_size = Vector2.ZERO
 
 func _process(delta):
 	if (Input.is_action_pressed("shoot") and can_shoot == true):
-		var resource = load("res://player_bullet.tscn")
+		var resource = load("res://bullet.tscn")
 		var bullet = resource.instance()
 		owner.add_child(bullet)
 		bullet.transform = $PlayerShootPosition.global_transform

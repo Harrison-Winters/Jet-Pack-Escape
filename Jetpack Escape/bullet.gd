@@ -18,7 +18,7 @@ func _physics_process(delta):
 	position += velocity * delta
 	
 #TODO destroy bullet on collision with enemy/obstacle
-func _on_PlayerBullet_body_entered(body):
+func _on_Bullet_body_entered(body):
 	queue_free()
 
 #destroys bullet once it exits the screen
