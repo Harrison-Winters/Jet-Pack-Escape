@@ -4,7 +4,8 @@ extends Node2D
 func _ready():
 #	$HUD/StartButton.show()\
 	var y = yield($HUD, "start_game")
-	get_tree().call_group("ObstacleGroup", "update_velocity")
+#	get_tree().call_group("ObstacleGroup", "update_velocity")
+	$Part1._on_start_click_blocks_move();
 
 	
 
@@ -27,7 +28,7 @@ func new_game():
 	
 #	$HUD/StartButton.show()
 	var y = yield($HUD, "start_game")
-	get_tree().call_group("ObstacleGroup", "update_velocity")
+	$Part1._on_start_click_blocks_move();
 
 
 #func initial_game():
