@@ -1,15 +1,18 @@
 extends Node2D
 
+var lives
+var score
+
 
 func _ready():
 #	$HUD/StartButton.show()\
 	var y = yield($HUD, "start_game")
+	lives = 3
+	score = 0
+	$HUD.update_lives(lives)
+	$HUD.update_score(score)
 #	get_tree().call_group("ObstacleGroup", "update_velocity")
 	$Part1._on_start_click_blocks_move();
-
-	
-
-
 
 func _process(delta):
 	
