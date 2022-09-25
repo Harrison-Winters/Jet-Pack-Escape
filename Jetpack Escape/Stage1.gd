@@ -14,6 +14,7 @@ func _ready():
 #	get_tree().call_group("ObstacleGroup", "update_velocity")
 	$Part1._on_start_click_blocks_move();
 
+
 func _process(delta):
 	
 #	GAME OVER Condition
@@ -30,14 +31,8 @@ func new_game():
 	get_tree().reload_current_scene()
 	
 #	$HUD/StartButton.show()
-#	var y = yield($HUD, "restart_game")
+	var y = yield($HUD, "start_game")
 	$Part1._on_start_click_blocks_move();
-
-
-#func initial_game():
-#	var y = yield($HUD, "start_game")
-#	get_tree().call_group("ObstacleGroup", "update_velocity")
-
 
 func _on_HUD_restart_game():
 	get_tree().reload_current_scene()
@@ -45,3 +40,6 @@ func _on_HUD_restart_game():
 #	$HUD/StartButton.show()
 #	var y = yield($HUD, "restart_game")
 	$Part1._on_start_click_blocks_move();
+#func initial_game():
+#	var y = yield($HUD, "start_game")
+#	get_tree().call_group("ObstacleGroup", "update_velocity")
