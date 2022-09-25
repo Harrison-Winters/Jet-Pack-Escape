@@ -16,6 +16,7 @@ var can_shoot = true
 func _ready():
 	screen_size = get_viewport_rect().size
 	shieldSpirite.visible = false
+	Signals.emit_signal("on_player_life_changed", life)
 	
 func _physics_process(delta):
 	if Input.is_action_pressed("ui_left"):
@@ -52,6 +53,7 @@ func damage(amount: int):
 	if !invincibilityTimer.is_stopped():
 		return
 	life -= amount
+	Signals.emit_signal("on_player_life_changed", life)
 	print("Player Life = %s" % life)
 	if life <= 0:
 		print("Player died")

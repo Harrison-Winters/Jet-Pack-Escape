@@ -24,6 +24,10 @@ config/name="Jetpack Escape"
 run/main_scene="res://Stage1.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+Signals="*res://autoloads/Signals.gd"
+
 [display]
 
 window/size/width=480
