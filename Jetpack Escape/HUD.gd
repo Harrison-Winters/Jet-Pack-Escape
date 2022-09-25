@@ -5,7 +5,7 @@ signal start_game
 
 
 func _ready():
-	pass 
+	Signals.connect("on_player_life_changed", self, "update_lives") 
 
 func update_lives(lifeCount):
 	#print("updating lives: " + str(lifeCount))
