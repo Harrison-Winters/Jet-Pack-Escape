@@ -1,9 +1,10 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Wall1.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Wall2.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Wall3.tscn" type="PackedScene" id=3]
 [ext_resource path="res://WinArea.tscn" type="PackedScene" id=4]
+
 [ext_resource path="res://Obstacles.gd" type="Script" id=5]
 [ext_resource path="res://Wall5.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Wall4.tscn" type="PackedScene" id=7]
@@ -20,45 +21,51 @@ __meta__ = {
 [node name="Obstacle10" parent="." groups=["ObstaclesPart1"] instance=ExtResource( 2 )]
 position = Vector2( 530, -2950 )
 
+[ext_resource path="res://Part1.gd" type="Script" id=5]
+
+
+[node name="WinArea" parent="." groups=["ObstaclesPart1"] instance=ExtResource( 4 )]
+position = Vector2( 370, -2469 )
+collision_layer = 1025
+collision_mask = 1025
+
+
 [node name="Obstacle1" parent="." groups=["ObstaclesPart1"] instance=ExtResource( 1 )]
-position = Vector2( 289, 325 )
+position = Vector2( 284, 325 )
 
 [node name="Obstacle2" parent="." groups=["ObstaclesPart1"] instance=ExtResource( 2 )]
-position = Vector2( 383, -6 )
+position = Vector2( 391, 31 )
 
 [node name="Obstacle3" parent="." groups=["ObstaclesPart1"] instance=ExtResource( 1 )]
 position = Vector2( 646, 441 )
 
 [node name="Obstacle4" parent="." groups=["ObstaclesPart1"] instance=ExtResource( 1 )]
-position = Vector2( 507, -709 )
+position = Vector2( 517, -625 )
 
 [node name="Obstacle5" parent="." groups=["ObstaclesPart1"] instance=ExtResource( 2 )]
 position = Vector2( 612, -170 )
 
 [node name="Obstacle6" parent="." groups=["ObstaclesPart1"] instance=ExtResource( 1 )]
-position = Vector2( 295, -187 )
+position = Vector2( 285, -187 )
 
 [node name="Obstacle7" parent="." groups=["ObstaclesPart1"] instance=ExtResource( 2 )]
-position = Vector2( 689, -540 )
+position = Vector2( 684, -462 )
 
 [node name="Obstacles" parent="." groups=["ObstaclesPart1"] instance=ExtResource( 1 )]
-position = Vector2( 658, -2944 )
+position = Vector2( 488, -328 )
 
 [node name="Wall3" parent="." groups=["ObstaclesPart1"] instance=ExtResource( 3 )]
-position = Vector2( 787, 165 )
+position = Vector2( 784, 205 )
 rotation = 3.14159
 
 [node name="Wall4" parent="." groups=["ObstaclesPart1"] instance=ExtResource( 3 )]
-position = Vector2( 295, -551 )
+position = Vector2( 285, -489 )
 
 [node name="Obstacles2" parent="." groups=["ObstaclesPart1"] instance=ExtResource( 1 )]
-position = Vector2( 296, -869 )
-
-[node name="Wall1" parent="Obstacles2" groups=["ObstaclesPart1"] instance=ExtResource( 1 )]
-position = Vector2( 86, -127 )
+position = Vector2( 289, -869 )
 
 [node name="Obstacles3" parent="." groups=["ObstaclesPart1"] instance=ExtResource( 1 )]
-position = Vector2( 652, -868 )
+position = Vector2( 682, -868 )
 
 [node name="Obstacle8" parent="." groups=["ObstaclesPart1"] instance=ExtResource( 2 )]
 position = Vector2( 577, -1566 )
@@ -72,24 +79,22 @@ position = Vector2( 518, -1060 )
 rotation = -1.5708
 
 [node name="Obstacles4" parent="." groups=["ObstaclesPart1"] instance=ExtResource( 1 )]
-position = Vector2( 295, -1394 )
+position = Vector2( 282, -1394 )
 
 [node name="Obstacles5" parent="." groups=["ObstaclesPart1"] instance=ExtResource( 1 )]
-position = Vector2( 655, -1725 )
-
-[node name="Wall1" parent="Obstacles5" groups=["ObstaclesPart1"] instance=ExtResource( 1 )]
-position = Vector2( -48, -168 )
+position = Vector2( 719, -1724 )
 
 [node name="Obstacles6" parent="." groups=["ObstaclesPart1"] instance=ExtResource( 1 )]
-position = Vector2( 292, -3509 )
+position = Vector2( 534, -1896 )
 
 [node name="Obstacles7" parent="." groups=["ObstaclesPart1"] instance=ExtResource( 1 )]
-position = Vector2( 292, -2052 )
+position = Vector2( 281, -2051 )
 
 [node name="Obstacles8" parent="." groups=["ObstaclesPart1"] instance=ExtResource( 1 )]
-position = Vector2( 544, -2258 )
+position = Vector2( 612, -2251 )
 
 [node name="Obstacle9" parent="." groups=["ObstaclesPart1"] instance=ExtResource( 2 )]
+
 position = Vector2( 297, -1787 )
 
 [node name="Obstacles9" parent="." groups=["ObstaclesPart1"] instance=ExtResource( 1 )]
@@ -455,3 +460,7 @@ position = Vector2( -15, -5101 )
 
 [node name="FallingWall20" parent="FallingWall" groups=["ObstaclesPart1"] instance=ExtResource( 10 )]
 position = Vector2( 231, -5167 )
+
+
+[connection signal="win" from="WinArea" to="." method="_on_WinArea_win"]
+

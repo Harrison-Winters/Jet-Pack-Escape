@@ -4,7 +4,7 @@
 [ext_resource path="res://Obstacles.gd" type="Script" id=2]
 [ext_resource path="res://art/png/TILE_2E.png" type="Texture" id=3]
 
-[node name="Wall2" type="Node2D"]
+[node name="Obstacle2" type="Node2D"]
 script = ExtResource( 2 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
