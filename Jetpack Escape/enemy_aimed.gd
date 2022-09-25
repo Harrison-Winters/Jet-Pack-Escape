@@ -7,7 +7,10 @@ func _ready():
 	pass # Replace with function body.
 
 func get_player_position():
-	aimPosition = get_node_or_null("../PlayerCollisionObject").global_position
+	var player = get_node_or_null("../PlayerCollisionObject")
+	aimPosition = null
+	if player != null:
+		aimPosition = player.global_position 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
