@@ -56,6 +56,7 @@ collision_layer = 0
 [node name="HUD" parent="." instance=ExtResource( 4 )]
 
 [node name="Part1" parent="." instance=ExtResource( 6 )]
+position = Vector2( -300, -186 )
 __meta__ = {
 "_edit_vertical_guides_": [ 750.0 ]
 }
@@ -74,5 +75,7 @@ stretch_mode = 2
 script = ExtResource( 8 )
 
 [connection signal="restart_game" from="HUD" to="." method="_on_HUD_restart_game"]
+
 [connection signal="start_game" from="HUD" to="TextureRect" method="_on_HUD_start_game"]
 [connection signal="win" from="Part1" to="HUD" method="_on_Part1_win"]
+
