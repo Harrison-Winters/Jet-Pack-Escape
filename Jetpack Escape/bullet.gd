@@ -15,7 +15,7 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
 	var velocity = Vector2.UP.rotated(angle) * speed
-	position += velocity * delta
+	position += transform.x * speed * delta
 	
 #TODO destroy bullet on collision with enemy/obstacle
 func _on_Bullet_body_entered(body):
