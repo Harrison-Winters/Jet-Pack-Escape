@@ -5,7 +5,7 @@ extends "res://bullet.gd"
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	angle = PI
-	speed = 300.0
+	speed = 100.0
 	#pass # Replace with function body.
 
 
