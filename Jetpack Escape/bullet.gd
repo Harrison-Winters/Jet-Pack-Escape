@@ -16,11 +16,13 @@ func _ready():
 func _physics_process(delta):
 	var velocity = Vector2.UP.rotated(angle) * speed
 	position += velocity * delta
-	
-#TODO destroy bullet on collision with enemy/obstacle
-func _on_Bullet_body_entered(body):
-	queue_free()
+
+
 
 #destroys bullet once it exits the screen
 func _on_VisibilityNotifier2D_screen_exited():
 	queue_free()
+
+#destroys bullets on contact with other entities
+#func _on_Bullet_body_entered(body):
+#		queue_free()
