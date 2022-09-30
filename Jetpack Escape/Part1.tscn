@@ -103,9 +103,7 @@ position = Vector2( 296, -2874 )
 position = Vector2( 661, -2631 )
 
 [node name="WinArea" parent="." groups=["ObstaclesPart1"] instance=ExtResource( 4 )]
-position = Vector2( 335, -331 )
-collision_layer = 8
-collision_mask = 8
+position = Vector2( 266, -11275 )
 
 [node name="Wall52" parent="." groups=["ObstaclesPart1"] instance=ExtResource( 7 )]
 position = Vector2( 1600, -10757 )
