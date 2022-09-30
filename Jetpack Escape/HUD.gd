@@ -2,6 +2,8 @@ extends CanvasLayer
 
 signal restart_game
 signal start_game
+signal nux
+signal stop_score
 
 
 func _ready():
@@ -28,11 +30,17 @@ func _on_StartButton_pressed():
 	$StartButton.hide()
 	$ScoreCounter.show()
 	$LifeCounter.show()
+	$NuxToggle.hide()
 	emit_signal("start_game")
 	
 func _on_Part1_win():
+	emit_signal("stop_score")
 	$WinText.show()
 	$RestartPauseTimer.start()
 	yield($RestartPauseTimer, "timeout")
 #	$StartButton.show()
 	emit_signal("restart_game")
+
+
+func _on_NuxToggle_toggled(button_pressed):
+	emit_signal("nux")
