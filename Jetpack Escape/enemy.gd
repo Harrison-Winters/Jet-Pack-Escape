@@ -1,17 +1,26 @@
 extends RigidBody2D
+class_name Enemy
 
-
-var health = 100
+var life = 4
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	Signals.emit_signal("on_enemy_life_changed", life)
+	#pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
+	
+func damage(amount: int):
+	life -= amount
+	Signals.emit_signal("on_enemy_life_changed", life)
+	print("Enemy Life = %s" % life)
+	if life <= 0:
+		print("Enemy died")
+		queue_free()
 
 #shoot single bullet in whatever direction the enemy is facing
 func _on_ShotTimer_timeout():
