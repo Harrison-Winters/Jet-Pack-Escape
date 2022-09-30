@@ -80,3 +80,7 @@ func _on_InvincibilityTimer_timeout():
 func _on_PlayerShotTimer_timeout():
 	can_shoot = true
 	
+
+
+func _on_HUD_nux():
+	$CollisionShape2D.disabled = !$CollisionShape2D.disabled
