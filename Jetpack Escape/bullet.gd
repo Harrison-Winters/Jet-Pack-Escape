@@ -5,6 +5,7 @@ extends Area2D
 var angular_speed = PI
 var speed = 750.0
 var angle = 0
+var screen_size = Vector2.ZERO
 
 
 # Called when the node enters the scene tree for the first time.
@@ -16,6 +17,9 @@ func _ready():
 func _physics_process(delta):
 	var velocity = Vector2.UP.rotated(angle) * speed
 	position += velocity * delta
+	
+	if position.y < 0:
+		queue_free()
 
 
 

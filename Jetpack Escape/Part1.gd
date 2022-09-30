@@ -10,6 +10,7 @@ func _ready():
 
 func _on_start_click_blocks_move():
 	get_tree().call_group("ObstaclesPart1", "update_velocity")
+	get_tree().call_group("enemies", "update_velocity")
 #	$Obstacles.update_velocity()
 
 func _on_WinArea_win():

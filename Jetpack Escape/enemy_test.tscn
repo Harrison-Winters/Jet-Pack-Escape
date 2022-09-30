@@ -11,10 +11,11 @@
 
 [node name="enemy" parent="." instance=ExtResource( 1 )]
 position = Vector2( 235, 119 )
-gravity_scale = 0.0
 
 [node name="PlayerCollisionObject" parent="." instance=ExtResource( 2 )]
 position = Vector2( 235, 663 )
 
 [node name="enemy_radial" parent="." instance=ExtResource( 3 )]
 position = Vector2( 265, 298 )
+collision_layer = 1
+collision_mask = 1
