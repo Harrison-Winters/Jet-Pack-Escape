@@ -11,6 +11,7 @@ export var life: int = 3
 
 export var shieldDelay: float = 3.0
 var can_shoot = true
+var isNux = false;
 
 
 func _ready():
@@ -84,3 +85,6 @@ func _on_PlayerShotTimer_timeout():
 
 func _on_HUD_nux():
 	$CollisionShape2D.disabled = !$CollisionShape2D.disabled
+#	isNux = !isNux
+#	set_collision_mask_bit(1, !isNux)
+#	set_collision_layer_bit(1, !isNux)

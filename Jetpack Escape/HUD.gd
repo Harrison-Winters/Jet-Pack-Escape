@@ -3,6 +3,7 @@ extends CanvasLayer
 signal restart_game
 signal start_game
 signal nux
+signal stop_score
 
 
 func _ready():
@@ -33,6 +34,7 @@ func _on_StartButton_pressed():
 	emit_signal("start_game")
 	
 func _on_Part1_win():
+	emit_signal("stop_score")
 	$WinText.show()
 	$RestartPauseTimer.start()
 	yield($RestartPauseTimer, "timeout")

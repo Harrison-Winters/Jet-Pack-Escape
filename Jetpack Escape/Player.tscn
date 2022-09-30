@@ -8,6 +8,8 @@
 radius = 21.0
 
 [node name="PlayerCollisionObject" type="KinematicBody2D"]
+collision_layer = 9
+collision_mask = 9
 collision/safe_margin = 3.0
 script = ExtResource( 1 )
 
