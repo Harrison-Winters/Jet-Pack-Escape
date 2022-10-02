@@ -16,7 +16,7 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
 	var velocity = Vector2.UP.rotated(angle) * speed
-	position += velocity * delta
+	position += velocity * delta * 2
 	
 	if position.y < 0:
 		queue_free()
