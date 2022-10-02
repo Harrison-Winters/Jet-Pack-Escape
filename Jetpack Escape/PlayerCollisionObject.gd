@@ -5,6 +5,7 @@ var screen_size = Vector2.ZERO
 onready var invincibilityTimer := $InvincibilityTimer
 onready var shieldSpirite := $Shield
 onready var shieldDelayTimer := $ShieldDelayTimer
+onready var shieldRefract := $ShieldRefract
 
 export var damageInvincibilityTimer := 2.0
 export var life: int = 3
@@ -45,18 +46,14 @@ func _physics_process(delta):
 	if Input.is_action_pressed("ui_parry") and shieldDelayTimer.is_stopped():
 		shieldDelayTimer.start(shieldDelay)
 		invincibilityTimer.start(damageInvincibilityTimer)
+		shieldRefract.disabled = false
 		shieldSpirite.visible = true
 #
 
 
 func damage(amount: int):
 	if !invincibilityTimer.is_stopped():
-		var resource = load("res://player_bullet.tscn")
-		var bullet = resource.instance()
-		owner.add_child(bullet)
-		bullet.transform = $PlayerShootPosition.global_transform
-		position.x = clamp(position.x, 0, screen_size.x)
-		position.y = clamp(position.y, 0, screen_size.y + 100)
+		refract()
 		return
 	life -= amount
 	Signals.emit_signal("on_player_life_changed", life)
@@ -67,7 +64,14 @@ func damage(amount: int):
 		#queue_free()
 		$".".hide()
 	
-
+func refract():
+	var resource = load("res://player_bullet.tscn")
+	var bullet = resource.instance()
+	owner.add_child(bullet)
+	bullet.transform = $PlayerShootPosition.global_transform
+	position.x = clamp(position.x, 0, screen_size.x)
+	position.y = clamp(position.y, 0, screen_size.y + 100)
+	
 func _process(delta):
 	#shooting logic
 	if (Input.is_action_pressed("shoot") and can_shoot == true):
@@ -87,6 +91,7 @@ func _process(delta):
 
 func _on_InvincibilityTimer_timeout():
 	shieldSpirite.visible = false
+	shieldRefract.disabled = true
 func _on_PlayerShotTimer_timeout():
 	$ShotSound.stop()
 	can_shoot = true
