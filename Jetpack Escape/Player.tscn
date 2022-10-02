@@ -1,9 +1,8 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://PlayerCollisionObject.gd" type="Script" id=1]
 [ext_resource path="res://art/player1.png" type="Texture" id=2]
 [ext_resource path="res://Shield.png" type="Texture" id=3]
-[ext_resource path="res://sound/shot_short.mp3" type="AudioStream" id=4]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 21.0
@@ -32,16 +31,11 @@ texture = ExtResource( 3 )
 one_shot = true
 
 [node name="PlayerShotTimer" type="Timer" parent="."]
-wait_time = 0.2
+wait_time = 0.1
 one_shot = true
 
 [node name="PlayerShootPosition" type="Position2D" parent="."]
 position = Vector2( 0, -32 )
 
-[node name="ShotSound" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 4 )
-volume_db = -15.0
-
 [connection signal="timeout" from="InvincibilityTimer" to="." method="_on_InvincibilityTimer_timeout"]
 [connection signal="timeout" from="PlayerShotTimer" to="." method="_on_PlayerShotTimer_timeout"]
-[connection signal="finished" from="ShotSound" to="." method="_on_ShotSound_finished"]

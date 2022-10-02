@@ -51,21 +51,13 @@ func _physics_process(delta):
 
 func damage(amount: int):
 	if !invincibilityTimer.is_stopped():
-		var resource = load("res://player_bullet.tscn")
-		var bullet = resource.instance()
-		owner.add_child(bullet)
-		bullet.transform = $PlayerShootPosition.global_transform
-		position.x = clamp(position.x, 0, screen_size.x)
-		position.y = clamp(position.y, 0, screen_size.y + 100)
 		return
 	life -= amount
 	Signals.emit_signal("on_player_life_changed", life)
 	print("Player Life = %s" % life)
 	if life <= 0:
-		life = 0
 		print("Player died")
-		#queue_free()
-		$".".hide()
+		queue_free()
 	
 
 func _process(delta):
@@ -75,7 +67,6 @@ func _process(delta):
 		var bullet = resource.instance()
 		owner.add_child(bullet)
 		bullet.transform = $PlayerShootPosition.global_transform
-		$ShotSound.play()
 		can_shoot = false
 		$PlayerShotTimer.start()
 	position.x = clamp(position.x, 0, screen_size.x)
@@ -88,7 +79,6 @@ func _process(delta):
 func _on_InvincibilityTimer_timeout():
 	shieldSpirite.visible = false
 func _on_PlayerShotTimer_timeout():
-	$ShotSound.stop()
 	can_shoot = true
 	
 
@@ -98,4 +88,3 @@ func _on_HUD_nux():
 #	isNux = !isNux
 #	set_collision_mask_bit(1, !isNux)
 #	set_collision_layer_bit(1, !isNux)
-
