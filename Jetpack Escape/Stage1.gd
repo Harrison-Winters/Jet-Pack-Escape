@@ -1,7 +1,7 @@
 extends Node2D
 
 var lives
-var score
+var score = 0
 
 
 func _ready():
@@ -13,9 +13,15 @@ func _ready():
 	$HUD.update_score(score)
 #	get_tree().call_group("ObstacleGroup", "update_velocity")
 	$Part1._on_start_click_blocks_move();
+	
+	
+	
 
 
 func _process(delta):
+	
+
+	
 	
 #	GAME OVER Condition
 	if $PlayerCollisionObject.position.y > 800:
@@ -26,6 +32,7 @@ func _process(delta):
 #		$StartTimer.start()
 #		Clear all obstacles from the screen
 		get_tree().call_group("ObstacleGroup", "queue_free")
+		$ScoreTimer.stop()
 
 func new_game():
 	get_tree().reload_current_scene()
@@ -43,3 +50,13 @@ func _on_HUD_restart_game():
 #func initial_game():
 #	var y = yield($HUD, "start_game")
 #	get_tree().call_group("ObstacleGroup", "update_velocity")
+
+
+func _on_ScoreTimer_timeout():
+	#	Update the score every second
+	score = score + 1
+	$HUD.update_score(score)
+
+
+func _on_HUD_stop_score():
+	$ScoreTimer.stop()
