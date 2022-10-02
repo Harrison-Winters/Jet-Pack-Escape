@@ -31,7 +31,18 @@ func _on_ShotTimer_timeout():
 	var resource = load("res://enemy_bullet.tscn")
 	var bullet = resource.instance()
 	owner.add_child(bullet)
-	bullet.transform = $EnemyShootPosition.global_transform
+	bullet.global_transform = $EnemyShootPosition.global_transform
 	
 func update_velocity():
 	velocity = Vector2.DOWN * 200
+	
+	
+	
+
+
+func _on_enemy_body_entered(body):
+	pass # Replace with function body.
+
+
+func _on_enemy_body_bullet_entered(body):
+	pass # Replace with function body.
