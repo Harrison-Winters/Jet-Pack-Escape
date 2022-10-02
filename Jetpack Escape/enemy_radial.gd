@@ -18,7 +18,7 @@ func _on_ShotTimer_timeout():
 	for i in num_shots:
 		var bullet = resource.instance()
 		owner.add_child(bullet)
-		bullet.global_transform = $EnemyShootPosition.global_transform
+		bullet.transform = $EnemyShootPosition.global_transform
 		bullet.angle = shot_angle
 		shot_angle += 2*PI/num_shots
 

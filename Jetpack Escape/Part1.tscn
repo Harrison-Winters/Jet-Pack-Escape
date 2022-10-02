@@ -241,11 +241,17 @@ position = Vector2( 432, -7328 )
 [node name="Wall31" parent="." groups=["ObstaclesPart1"] instance=ExtResource( 8 )]
 position = Vector2( 669, -7758 )
 
+[node name="Wall32" parent="." groups=["ObstaclesPart1"] instance=ExtResource( 1 )]
+position = Vector2( 1114, -6852 )
+
 [node name="Wall33" parent="." groups=["ObstaclesPart1"] instance=ExtResource( 2 )]
 position = Vector2( 655, -6939 )
 
 [node name="Wall72" parent="Wall33" groups=["ObstaclesPart1"] instance=ExtResource( 1 )]
 position = Vector2( -296, -475 )
+
+[node name="Wall34" parent="." groups=["ObstaclesPart1"] instance=ExtResource( 1 )]
+position = Vector2( 1135, -7491 )
 
 [node name="Wall35" parent="." groups=["ObstaclesPart1"] instance=ExtResource( 8 )]
 position = Vector2( 393, -6126 )
@@ -288,8 +294,14 @@ position = Vector2( 336, -8674 )
 [node name="Wall61" parent="." groups=["ObstaclesPart1"] instance=ExtResource( 1 )]
 position = Vector2( 586, -8884 )
 
+[node name="Wall44" parent="." groups=["ObstaclesPart1"] instance=ExtResource( 8 )]
+position = Vector2( 1126, -9177 )
+
 [node name="Wall46" parent="." groups=["ObstaclesPart1"] instance=ExtResource( 6 )]
 position = Vector2( 616, -8675 )
+
+[node name="Wall48" parent="." groups=["ObstaclesPart1"] instance=ExtResource( 2 )]
+position = Vector2( -298, -8771 )
 
 [node name="Wall49" parent="." groups=["ObstaclesPart1"] instance=ExtResource( 3 )]
 position = Vector2( 296, -9212 )
@@ -454,61 +466,26 @@ position = Vector2( 391, -5065 )
 position = Vector2( 543, -5233 )
 
 [node name="enemy2" parent="." groups=["enemies"] instance=ExtResource( 11 )]
-position = Vector2( 643, -4324 )
+position = Vector2( 637, -4240 )
 
 [node name="enemy" parent="." groups=["enemies"] instance=ExtResource( 11 )]
-position = Vector2( 392, -1583 )
+position = Vector2( 492, -1708 )
 
 [node name="enemy_radial" parent="." groups=["enemies"] instance=ExtResource( 13 )]
-physics_interpolation_mode = 0
-position = Vector2( 348, -9756 )
+position = Vector2( 543, -10429 )
 collision_layer = 1
 collision_mask = 1
 
 [node name="enemy3" parent="." groups=["enemies"] instance=ExtResource( 11 )]
 position = Vector2( 514, -182 )
 
-[node name="enemy_radial2" parent="." groups=["enemies"] instance=ExtResource( 13 )]
-physics_interpolation_mode = 0
-position = Vector2( 535, -2660 )
+[node name="enemy4" parent="." groups=["enemies"] instance=ExtResource( 11 )]
+position = Vector2( 487, -8927 )
 
-[node name="enemy5" parent="." groups=["enemies"] instance=ExtResource( 11 )]
-position = Vector2( 543, -892 )
+[node name="enemy_radial2" parent="." groups=["enemies"] instance=ExtResource( 13 )]
+position = Vector2( 581, -2692 )
 
 [node name="enemy_radial3" parent="." groups=["enemies"] instance=ExtResource( 13 )]
-position = Vector2( 409, -3749 )
-
-[node name="enemy_radial4" parent="." groups=["enemies"] instance=ExtResource( 13 )]
-position = Vector2( 601, -5046 )
-
-[node name="enemy_radial5" parent="." groups=["enemies"] instance=ExtResource( 13 )]
-position = Vector2( 704, -6101 )
-
-[node name="enemy_radial6" parent="." groups=["enemies"] instance=ExtResource( 13 )]
-position = Vector2( 695, -7991 )
-
-[node name="enemy_radial7" parent="." groups=["enemies"] instance=ExtResource( 13 )]
-position = Vector2( 421, -8743 )
-
-[node name="enemy6" parent="." groups=["enemies"] instance=ExtResource( 11 )]
-position = Vector2( 574, -7496 )
-
-[node name="enemy_radial8" parent="." groups=["enemies"] instance=ExtResource( 13 )]
-position = Vector2( 375, -5784 )
-
-[node name="enemy4" parent="." groups=["enemies"] instance=ExtResource( 11 )]
-position = Vector2( 525, -9416 )
-
-[node name="enemy_radial9" parent="." groups=["enemies"] instance=ExtResource( 13 )]
-position = Vector2( 683, -3273 )
-
-[node name="enemy7" parent="." groups=["enemies"] instance=ExtResource( 11 )]
-position = Vector2( 477, -6460 )
-
-[node name="enemy_radial10" parent="." groups=["enemies"] instance=ExtResource( 13 )]
-position = Vector2( 373, -7134 )
-
-[node name="enemy8" parent="." groups=["enemies"] instance=ExtResource( 11 )]
-position = Vector2( 537, -10316 )
+position = Vector2( 503, 466 )
 
 [connection signal="win" from="WinArea" to="." method="_on_WinArea_win"]
