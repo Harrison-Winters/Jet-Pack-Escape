@@ -18,8 +18,8 @@ func _physics_process(delta):
 	var velocity = Vector2.UP.rotated(angle) * speed
 	position += velocity * delta
 	
-	#if position.y < 0:
-		#queue_free()
+	if position.y < 0:
+		queue_free()
 
 
 
