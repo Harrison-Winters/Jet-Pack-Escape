@@ -51,6 +51,12 @@ func _physics_process(delta):
 
 func damage(amount: int):
 	if !invincibilityTimer.is_stopped():
+		var resource = load("res://player_bullet.tscn")
+		var bullet = resource.instance()
+		owner.add_child(bullet)
+		bullet.transform = $PlayerShootPosition.global_transform
+		position.x = clamp(position.x, 0, screen_size.x)
+		position.y = clamp(position.y, 0, screen_size.y + 100)
 		return
 	life -= amount
 	Signals.emit_signal("on_player_life_changed", life)
