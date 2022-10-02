@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/shot_full.mp3-92a42ff4dfedfb5ae7a73c4d973e1081.mp3str"
+
+[deps]
+
+source_file="res://sound/shot_full.mp3"
+dest_files=[ "res://.import/shot_full.mp3-92a42ff4dfedfb5ae7a73c4d973e1081.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
