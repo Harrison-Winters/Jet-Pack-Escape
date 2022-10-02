@@ -12,7 +12,6 @@ func _ready():
 	$HUD.update_lives(lives)
 	$HUD.update_score(score)
 #	get_tree().call_group("ObstacleGroup", "update_velocity")
-	$BGM.play()
 	$Part1._on_start_click_blocks_move();
 	
 	
@@ -47,7 +46,6 @@ func _on_HUD_restart_game():
 	
 #	$HUD/StartButton.show()
 #	var y = yield($HUD, "restart_game")
-	$BGM.play()
 	$Part1._on_start_click_blocks_move();
 #func initial_game():
 #	var y = yield($HUD, "start_game")
@@ -61,5 +59,4 @@ func _on_ScoreTimer_timeout():
 
 
 func _on_HUD_stop_score():
-	$BGM.stop()
 	$ScoreTimer.stop()
