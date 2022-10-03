@@ -4,7 +4,9 @@
 [ext_resource path="res://art/player1.png" type="Texture" id=2]
 [ext_resource path="res://Shield.png" type="Texture" id=3]
 [ext_resource path="res://sound/190707__soundslikewillem__laser-gun-short.wav" type="AudioStream" id=4]
+
 [ext_resource path="res://sound/448226__inspectorj__explosion-8-bit-01.wav" type="AudioStream" id=5]
+
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 21.0
