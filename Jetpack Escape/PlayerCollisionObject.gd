@@ -67,6 +67,7 @@ func _process(delta):
 		var bullet = resource.instance()
 		owner.add_child(bullet)
 		bullet.transform = $PlayerShootPosition.global_transform
+		$ShotSound.play()
 		can_shoot = false
 		$PlayerShotTimer.start()
 	position.x = clamp(position.x, 0, screen_size.x)
@@ -79,6 +80,7 @@ func _process(delta):
 func _on_InvincibilityTimer_timeout():
 	shieldSpirite.visible = false
 func _on_PlayerShotTimer_timeout():
+	$ShotSound.stop()
 	can_shoot = true
 	
 
@@ -88,3 +90,4 @@ func _on_HUD_nux():
 #	isNux = !isNux
 #	set_collision_mask_bit(1, !isNux)
 #	set_collision_layer_bit(1, !isNux)
+
