@@ -241,17 +241,11 @@ position = Vector2( 432, -7328 )
 [node name="Wall31" parent="." groups=["ObstaclesPart1"] instance=ExtResource( 8 )]
 position = Vector2( 669, -7758 )
 
-[node name="Wall32" parent="." groups=["ObstaclesPart1"] instance=ExtResource( 1 )]
-position = Vector2( 1114, -6852 )
-
 [node name="Wall33" parent="." groups=["ObstaclesPart1"] instance=ExtResource( 2 )]
 position = Vector2( 655, -6939 )
 
 [node name="Wall72" parent="Wall33" groups=["ObstaclesPart1"] instance=ExtResource( 1 )]
 position = Vector2( -296, -475 )
-
-[node name="Wall34" parent="." groups=["ObstaclesPart1"] instance=ExtResource( 1 )]
-position = Vector2( 1135, -7491 )
 
 [node name="Wall35" parent="." groups=["ObstaclesPart1"] instance=ExtResource( 8 )]
 position = Vector2( 393, -6126 )
@@ -294,14 +288,8 @@ position = Vector2( 336, -8674 )
 [node name="Wall61" parent="." groups=["ObstaclesPart1"] instance=ExtResource( 1 )]
 position = Vector2( 586, -8884 )
 
-[node name="Wall44" parent="." groups=["ObstaclesPart1"] instance=ExtResource( 8 )]
-position = Vector2( 1126, -9177 )
-
 [node name="Wall46" parent="." groups=["ObstaclesPart1"] instance=ExtResource( 6 )]
 position = Vector2( 616, -8675 )
-
-[node name="Wall48" parent="." groups=["ObstaclesPart1"] instance=ExtResource( 2 )]
-position = Vector2( -298, -8771 )
 
 [node name="Wall49" parent="." groups=["ObstaclesPart1"] instance=ExtResource( 3 )]
 position = Vector2( 296, -9212 )
@@ -471,10 +459,12 @@ position = Vector2( 637, -4240 )
 [node name="enemy" parent="." groups=["enemies"] instance=ExtResource( 11 )]
 position = Vector2( 492, -1708 )
 
+
 [node name="enemy_radial" parent="." groups=["enemies"] instance=ExtResource( 13 )]
 position = Vector2( 543, -10429 )
 collision_layer = 1
 collision_mask = 1
+
 
 [node name="enemy3" parent="." groups=["enemies"] instance=ExtResource( 11 )]
 position = Vector2( 514, -182 )
@@ -485,7 +475,36 @@ position = Vector2( 487, -8927 )
 [node name="enemy_radial2" parent="." groups=["enemies"] instance=ExtResource( 13 )]
 position = Vector2( 581, -2692 )
 
+
+[node name="enemy4" parent="." groups=["enemies"] instance=ExtResource( 11 )]
+position = Vector2( 543, -10293 )
+
 [node name="enemy_radial3" parent="." groups=["enemies"] instance=ExtResource( 13 )]
-position = Vector2( 503, 466 )
+position = Vector2( 610, -5055 )
+
+[node name="enemy_radial4" parent="." groups=["enemies"] instance=ExtResource( 13 )]
+position = Vector2( 368, -5781 )
+
+[node name="enemy_radial5" parent="." groups=["enemies"] instance=ExtResource( 13 )]
+position = Vector2( 697, -6323 )
+
+[node name="enemy5" parent="." groups=["enemies"] instance=ExtResource( 11 )]
+position = Vector2( 478, -6477 )
+
+[node name="enemy_radial6" parent="." groups=["enemies"] instance=ExtResource( 13 )]
+position = Vector2( 356, -7109 )
+
+[node name="enemy_radial7" parent="." groups=["enemies"] instance=ExtResource( 13 )]
+position = Vector2( 683, -7535 )
+
+[node name="enemy_radial8" parent="." groups=["enemies"] instance=ExtResource( 13 )]
+position = Vector2( 381, -8117 )
+
+[node name="enemy_radial9" parent="." groups=["enemies"] instance=ExtResource( 13 )]
+position = Vector2( 664, -8786 )
+
+[node name="enemy_radial" parent="." groups=["enemies"] instance=ExtResource( 13 )]
+position = Vector2( 356, -9570 )
+
 
 [connection signal="win" from="WinArea" to="." method="_on_WinArea_win"]
