@@ -2,7 +2,7 @@ extends RigidBody2D
 class_name Enemy
 
 
-var life = 4
+var life = 2
 var velocity = Vector2.ZERO
 
 
