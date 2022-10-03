@@ -1,9 +1,12 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://PlayerCollisionObject.gd" type="Script" id=1]
 [ext_resource path="res://art/player1.png" type="Texture" id=2]
 [ext_resource path="res://Shield.png" type="Texture" id=3]
 [ext_resource path="res://sound/190707__soundslikewillem__laser-gun-short.wav" type="AudioStream" id=4]
+
+[ext_resource path="res://sound/448226__inspectorj__explosion-8-bit-01.wav" type="AudioStream" id=5]
+
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 21.0
@@ -42,6 +45,11 @@ position = Vector2( 0, -32 )
 stream = ExtResource( 4 )
 volume_db = -15.0
 
+[node name="DamageSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+volume_db = -15.0
+
 [connection signal="timeout" from="InvincibilityTimer" to="." method="_on_InvincibilityTimer_timeout"]
 [connection signal="timeout" from="PlayerShotTimer" to="." method="_on_PlayerShotTimer_timeout"]
 [connection signal="finished" from="ShotSound" to="." method="_on_ShotSound_finished"]
+[connection signal="finished" from="DamageSound" to="." method="_on_DeathSound_finished"]
