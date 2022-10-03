@@ -2,7 +2,7 @@ extends RigidBody2D
 class_name Enemy
 
 
-var life = 4
+var life = 2
 var velocity = Vector2.ZERO
 
 
@@ -10,6 +10,7 @@ var velocity = Vector2.ZERO
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	Signals.emit_signal("on_enemy_life_changed", life)
+	$AnimatedSprite.play("default")
 	#pass # Replace with function body.
 
 
@@ -22,6 +23,10 @@ func damage(amount: int):
 	life -= amount
 	Signals.emit_signal("on_enemy_life_changed", life)
 	#print("Enemy Life = %s" % life)
+	
+	#Flashing animation
+	$AnimatedSprite.play("got_hit")
+	
 	if life <= 0:
 		#print("Enemy died")
 		queue_free()

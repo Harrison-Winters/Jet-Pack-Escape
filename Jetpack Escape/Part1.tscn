@@ -459,12 +459,10 @@ position = Vector2( 637, -4240 )
 [node name="enemy" parent="." groups=["enemies"] instance=ExtResource( 11 )]
 position = Vector2( 492, -1708 )
 
-
 [node name="enemy_radial" parent="." groups=["enemies"] instance=ExtResource( 13 )]
 position = Vector2( 543, -10429 )
 collision_layer = 1
 collision_mask = 1
-
 
 [node name="enemy3" parent="." groups=["enemies"] instance=ExtResource( 11 )]
 position = Vector2( 514, -182 )
@@ -474,7 +472,6 @@ position = Vector2( 487, -8927 )
 
 [node name="enemy_radial2" parent="." groups=["enemies"] instance=ExtResource( 13 )]
 position = Vector2( 581, -2692 )
-
 
 [node name="enemy4" parent="." groups=["enemies"] instance=ExtResource( 11 )]
 position = Vector2( 543, -10293 )
@@ -505,6 +502,5 @@ position = Vector2( 664, -8786 )
 
 [node name="enemy_radial" parent="." groups=["enemies"] instance=ExtResource( 13 )]
 position = Vector2( 356, -9570 )
-
 
 [connection signal="win" from="WinArea" to="." method="_on_WinArea_win"]
