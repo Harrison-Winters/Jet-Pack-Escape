@@ -56,8 +56,10 @@ func damage(amount: int):
 	Signals.emit_signal("on_player_life_changed", life)
 	print("Player Life = %s" % life)
 	if life <= 0:
+		life = 0
 		print("Player died")
-		queue_free()
+		$".".hide()
+		#queue_free()
 	
 
 func _process(delta):
