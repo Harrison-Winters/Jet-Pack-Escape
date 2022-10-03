@@ -53,6 +53,7 @@ autostart = true
 
 [node name="BGM" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 9 )
+volume_db = -15.0
 
 [connection signal="nux" from="HUD" to="PlayerCollisionObject" method="_on_HUD_nux"]
 [connection signal="restart_game" from="HUD" to="." method="_on_HUD_restart_game"]
