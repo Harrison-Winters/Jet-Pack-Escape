@@ -486,7 +486,7 @@ position = Vector2( 368, -5781 )
 position = Vector2( 697, -6323 )
 
 [node name="enemy5" parent="." groups=["enemies"] instance=ExtResource( 11 )]
-position = Vector2( 478, -6477 )
+position = Vector2( 473, -6562 )
 
 [node name="enemy_radial6" parent="." groups=["enemies"] instance=ExtResource( 13 )]
 position = Vector2( 356, -7109 )
