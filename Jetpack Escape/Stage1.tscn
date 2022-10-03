@@ -79,6 +79,12 @@ script = ExtResource( 8 )
 [node name="ScoreTimer" type="Timer" parent="."]
 autostart = true
 
+[node name="BGM" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 9 )
+volume_db = -15.0
+
+[connection signal="nux" from="HUD" to="PlayerCollisionObject" method="_on_HUD_nux"]
+
 [connection signal="restart_game" from="HUD" to="." method="_on_HUD_restart_game"]
 [connection signal="start_game" from="HUD" to="TextureRect" method="_on_HUD_start_game"]
 [connection signal="win" from="Part1" to="HUD" method="_on_Part1_win"]
