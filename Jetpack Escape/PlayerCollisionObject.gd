@@ -55,7 +55,6 @@ func damage(amount: int):
 		var bullet = resource.instance()
 		owner.add_child(bullet)
 		bullet.transform = $PlayerShootPosition.global_transform
-		$ShotSound.play()
 		position.x = clamp(position.x, 0, screen_size.x)
 		position.y = clamp(position.y, 0, screen_size.y + 100)
 		return 
