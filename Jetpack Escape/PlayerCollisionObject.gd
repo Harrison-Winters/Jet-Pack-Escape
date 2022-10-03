@@ -6,7 +6,7 @@ onready var invincibilityTimer := $InvincibilityTimer
 onready var shieldSpirite := $Shield
 onready var shieldDelayTimer := $ShieldDelayTimer
 
-export var damageInvincibilityTimer := 2.0
+export var damageInvincibilityTimer := .5
 export var life: int = 3
 
 export var shieldDelay: float = 3.0
