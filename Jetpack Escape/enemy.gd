@@ -19,6 +19,7 @@ func _process(delta):
 	pass
 	
 func damage(amount: int):
+	$DamageSound.play()
 	life -= amount
 	Signals.emit_signal("on_enemy_life_changed", life)
 	#print("Enemy Life = %s" % life)
@@ -46,3 +47,7 @@ func _on_enemy_body_entered(body):
 
 func _on_enemy_body_bullet_entered(body):
 	pass # Replace with function body.
+
+
+func _on_DamageSound_finished():
+	$DamageSound.stop()

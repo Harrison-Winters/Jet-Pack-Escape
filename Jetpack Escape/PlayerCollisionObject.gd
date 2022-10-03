@@ -50,6 +50,7 @@ func _physics_process(delta):
 
 
 func damage(amount: int):
+	$DamageSound.play()
 	if !invincibilityTimer.is_stopped():
 		var resource = load("res://player_bullet.tscn")
 		var bullet = resource.instance()
@@ -99,3 +100,7 @@ func _on_HUD_nux():
 #	set_collision_mask_bit(1, !isNux)
 #	set_collision_layer_bit(1, !isNux)
 
+
+
+func _on_DamageSound_finished():
+	$DamageSound.stop()
